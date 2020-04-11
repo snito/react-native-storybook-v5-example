@@ -49,7 +49,9 @@ static void InitializeFlipper(UIApplication *application) {
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
 {
 #if DEBUG
-  return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+  NSBundle* mainBundle = [NSBundle mainBundle];
+  NSString *IS_STORYBOOK = [mainBundle objectForInfoDictionaryKey:@"IS_STORYBOOK"];
+  return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:[IS_STORYBOOK boolValue] ? @"storybook/index" : @"index" fallbackResource:nil];
 #else
   return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
 #endif
