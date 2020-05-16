@@ -5,11 +5,11 @@ npm run start
 
 MyApp
 ```
-npm run ios
+yarn ios
 ```
 
 MyStorybook
 ```
-npm run storybook
-npm run ios -- --scheme MyStorybook
+yarn storybook
+yarn ios -- --scheme MyStorybook
 ```
