@@ -1,6 +1,6 @@
 
 ```
-npm run start
+yarn start
 ```
 
 MyApp
